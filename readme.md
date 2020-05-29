@@ -1,8 +1,5 @@
 # Cidaas for Wordpress
 
-Contributors : gopimallela
-Tested up to: 1.0.0
-Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,13 +23,5 @@ new users are created in WordPress database.
 For more information on installation visit : 
 
 
-== Frequently Asked Questions ==
-
-= What is the client's Redirect URI? =
-
-The Cidaas servers will require whitelisting a set of redirect URIs for security purposes. The Redirect URI provided
-by this client is like so:  https://example.com/wp-admin/admin-ajax.php?action=openid-connect-authorize
-
-Replace `example.com` with your domain name and path to WordPress.
 
 
