@@ -41,10 +41,10 @@ class Cidaas_Login_Form {
 	{
 		if ( $GLOBALS['pagenow'] == 'wp-login.php'
 			&& ( $this->settings->login_type == 'auto' || ! empty(sanitize_text_field($_GET['force_redirect']) ) )
-			&& ( ! isset( sanitize_text_field($_GET[ 'action' ]) ) || sanitize_text_field($_GET[ 'action' ]) !== 'logout' )
-			&& ! isset( sanitize_text_field($_POST['wp-submit']) ) )
+			&& (  sanitize_text_field($_GET[ 'action' ]) == NULL || sanitize_text_field($_GET[ 'action' ]) !== 'logout' )
+			&&  sanitize_text_field($_POST['wp-submit']) == NULL )
 		{
-			if (  ! isset( sanitize_text_field($_GET['login-error']) ) ) {
+			if (  sanitize_text_field($_GET['login-error']) !== NULL ) {
 			    $this->handle_redirect_cookie();
 				wp_redirect( $this->client_wrapper->get_authentication_url() );
 				exit;
@@ -60,7 +60,7 @@ class Cidaas_Login_Form {
 	 */
 	function handle_redirect_cookie()
 	{
-		if ( $GLOBALS['pagenow'] == 'wp-login.php' && isset( sanitize_text_field($_GET[ 'action' ]) ) && sanitize_text_field($_GET[ 'action' ]) === 'logout' ) {
+		if ( $GLOBALS['pagenow'] == 'wp-login.php' &&  sanitize_text_field($_GET[ 'action' ]) != NULL && sanitize_text_field($_GET[ 'action' ]) === 'logout' ) {
 			return;
 		}
 
@@ -76,7 +76,7 @@ class Cidaas_Login_Form {
 				// if using the login form, default redirect to the admin dashboard
 				$redirect_url = admin_url();
 
-				if ( isset( $_REQUEST['redirect_to'] ) ) {
+				if (  $_REQUEST['redirect_to'] !== NULL ) {
 					$redirect_url = esc_url( $_REQUEST[ 'redirect_to' ] );
 				}
 			}
@@ -95,7 +95,7 @@ class Cidaas_Login_Form {
 	 */
 	function handle_login_page( $message ) {
 
-		if ( isset( sanitize_text_field($_GET['login-error']) ) ) {
+		if (  sanitize_text_field($_GET['login-error']) !== NULL ) {
 			$message .= $this->make_error_output( sanitize_text_field($_GET['login-error']), sanitize_text_field($_GET['message']) );
 		}
 

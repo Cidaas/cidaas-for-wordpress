@@ -89,7 +89,7 @@ class Cidaas {
 	function enforce_privacy_redirect() {
 		if ( $this->settings->enforce_privacy && ! is_user_logged_in() ) {
 			// our client endpoint relies on the wp admind ajax endpoint
-			if ( ! defined( 'DOING_AJAX') || ! DOING_AJAX || ! isset( sanitize_text_field($_GET['action']) ) || sanitize_text_field($_GET['action']) != 'openid-connect-authorize' ) {
+			if ( ! defined( 'DOING_AJAX') || ! DOING_AJAX ||  sanitize_text_field($_GET['action']) == NULL || sanitize_text_field($_GET['action']) !== 'openid-connect-authorize' ) {
 				auth_redirect();
 			}
 		}

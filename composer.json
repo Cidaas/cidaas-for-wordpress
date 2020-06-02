@@ -3,12 +3,12 @@
   "type": "wordpress-plugin",
   "license": "GPL-2.0-only",
   "description": "Enhance your login experience with social login like Google, FB, as well as explore options of SSO, passwordless, all while being secure and compliant to world standards",
-  "homepage": "https://github.com/daggerhart/openid-connect-generic",
+  "homepage": "https://github.com/Cidaas/cidaas-for-wordpress",
   "authors": [
     {
-      "name": "Gopi Mallela",
-      "email": "gopi.mallela@widas.in",
-      "homepage": "https://github.com/daggerhart"
+      "name": "cidaas by Widas ID GmbH",
+      "email": "developer@widas.de",
+      "homepage": "https://www.cidaas.com"
     }
   ],
   "keywords": [
@@ -18,7 +18,7 @@
     "authentication"
   ],
   "support": {
-    "issues": "https://github.com/daggerhart/openid-connect-generic/issues"
+    "issues": "https://github.com/Cidaas/cidaas-for-wordpress/issues"
   },
   "require": {
     "php": ">=5.3.3",

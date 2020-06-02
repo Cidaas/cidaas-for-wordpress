@@ -337,7 +337,7 @@ class Cidaas_Settings_Page {
 				submit_button();
 				
 				// simple debug to view settings array
-				if ( isset(sanitize_text_field($_GET['debug']) ) ) {
+				if ( sanitize_text_field($_GET['debug']) !== NULL ) {
 					var_dump( $this->settings->get_values() );
 				}
 				?>
