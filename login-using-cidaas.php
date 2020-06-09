@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Login using Cidaas
-Plugin URI: 
-Description: Enhance your login experience with social login like Google, FB, as well as explore options of SSO, passwordless, all while being secure and compliant to world standards
+Plugin URI: https://www.cidaas.com/wordpress/ 
+Description: Striking the perfect balance between security and comfort - unique user identification and the highest level of security
 Version: 1.0.0
-Author: Gopi Mallela
+Author: cidaas by Widas ID GmbH
 License: GPLv2
 */
 

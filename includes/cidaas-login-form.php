@@ -40,11 +40,11 @@ class Cidaas_Login_Form {
 	function handle_redirect_login_type_auto()
 	{
 		if ( $GLOBALS['pagenow'] == 'wp-login.php'
-			&& ( $this->settings->login_type == 'auto' || ! empty(sanitize_text_field($_GET['force_redirect']) ) )
-			&& (  sanitize_text_field($_GET[ 'action' ]) == NULL || sanitize_text_field($_GET[ 'action' ]) !== 'logout' )
-			&&  sanitize_text_field($_POST['wp-submit']) == NULL )
+			&& ( $this->settings->login_type == 'auto' || ! empty($_GET['force_redirect'] ) )
+			&& (  $_GET[ 'action' ] == NULL || $_GET[ 'action' ] !== 'logout' )
+			&&  $_POST['wp-submit'] == NULL )
 		{
-			if (  sanitize_text_field($_GET['login-error']) !== NULL ) {
+			if (  $_GET['login-error'] !== NULL ) {
 			    $this->handle_redirect_cookie();
 				wp_redirect( $this->client_wrapper->get_authentication_url() );
 				exit;
@@ -95,7 +95,7 @@ class Cidaas_Login_Form {
 	 */
 	function handle_login_page( $message ) {
 
-		if (  sanitize_text_field($_GET['login-error']) !== NULL ) {
+		if (  $_GET['login-error'] !== NULL ) {
 			$message .= $this->make_error_output( sanitize_text_field($_GET['login-error']), sanitize_text_field($_GET['message']) );
 		}
 

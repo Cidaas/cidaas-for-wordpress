@@ -1,10 +1,13 @@
-# Cidaas for Wordpress
+=== Login using cidaas ===
 
+Contributors : gopimallela
+Tested up to: 5.4.1
+Tags: Single Sign On, SSO, Login, Authentication, Authorization, CIAM, OpenID Connect, OIDC, OAuth, OAuth 2.0
+Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Enhance your login experience with social login like Google, FB, as well as explore options of SSO, passwordless, all while being secure and compliant to world standards
-
+Striking the perfect balance between security and comfort - unique user identification and the highest level of security
 
 == Description ==
 
